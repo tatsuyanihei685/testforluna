@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>TDA Tag Test</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+</head>
+<body>
+
+<!-- Div Tag (Please put this div to the place where want to display the AD) -->
+ブロック１：514<br />
+<div id="rdn-adspot-NTEST-21856205"></div>
+ブロック１：497<br />
+<div id="rdn-adspot-NTEST2-47009278"></div>
+
+ブロック２：496<br />
+<div id="rdn-adspot-NTEST4-39699080"></div>
+ブロック２：639<br />
+<div id="rdn-adspot-NTEST3-73979812"></div>
+
+
+<!-- Script Tag (Please put this script part just before </body>) -->
+<script>
+	var rdntag = rdntag || {};
+	rdntag.cmd = rdntag.cmd || [];
+	rdntag.cmd.push(function() {
+		rdntag
+			.defineAdCode("NTEST", "rdn-adspot-NTEST-21856205")
+			.enableSingleRequest();
+		rdntag
+			.defineAdCode("NTEST2", "rdn-adspot-NTEST2-47009278")
+			.enableSingleRequest();
+		rdntag.displayWithSingleRequest();
+	});
+
+	var rdntag = rdntag || {};
+	rdntag.cmd = rdntag.cmd || [];
+	rdntag.cmd.push(function() {
+		rdntag
+			.defineAdCode("NTEST4", "rdn-adspot-NTEST4-39699080")
+			.enableSingleRequest();
+		rdntag
+			.defineAdCode("NTEST3", "rdn-adspot-NTEST3-73979812")
+			.enableSingleRequest();
+		rdntag.displayWithSingleRequest();
+	});
+</script>
+<script src="https://stg-s-cdn.rmp.rakuten.co.jp/js/aa.js" async></script>
+
+</body>
+</html>
