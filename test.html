@@ -7,17 +7,32 @@
   <body>
 
 
-<div id="rdn-adspot-864-20120402"></div>
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+<div id="rdn-adspot-507-46823135"></div>
 <script>
-var rdntag = rdntag || {};
-rdntag.cmd = rdntag.cmd || [];
-rdntag.cmd.push(function() {
-  rdntag
-    .defineAd(864, "rdn-adspot-864-20120402")
-  rdntag.display("rdn-adspot-864-20120402");
-});
+  var rdntag = rdntag || {};
+  rdntag.cmd = rdntag.cmd || [];
+  rdntag.cmd.push(function() {
+    rdntag
+      .defineAd(5070, "rdn-adspot-507-46823135")
+      .setResponsive(true)
+    rdntag.display("rdn-adspot-507-46823135");
+  });
+  document.getElementById('rdn-adspot-507-46823135').addEventListener('slotResponseReceived', function(e) {
+    if (e && e.detail && e.detail.adReturned === false) {
+      window.googletag = window.googletag || {cmd: []};
+      googletag.cmd.push(function() {
+        googletag.defineSlot('/7727/RakutenSuperPointScreen/SP/Coupon/FooterRect', [300, 250], 'div-gpt-ad-1495517748626-0').addService(googletag.pubads())
+        .setTargeting("adnwpub", "9_SP_SPS")
+        googletag.pubads().collapseEmptyDivs();
+        googletag.enableServices();
+      });
+      var a = document.getElementById('rdn-adspot-507-46823135');
+      a.insertAdjacentHTML("afterbegin","<div id='div-gpt-ad-1495517748626-0'></div>");
+      googletag.cmd.push(function() { googletag.display('div-gpt-ad-1495517748626-0'); });
+    }
+  });
 </script>
-<script src="https://stg-s-cdn.rmp.rakuten.co.jp/js/aa.js" async></script>
-
+<script src="https://s-cdn.rmp.rakuten.co.jp/js/aa.js"></script>
 </body>
 </html>
