@@ -13,19 +13,29 @@
   <body>
     <h1>Amp Ad Rakuten Example/Debug</h1>
 
-	<h1>SP AMP</h1>
-----------
+----------<br />
 <amp-ad
-  width="1280"
-  height="200"
+  width="300"
+  height="250"
   type="rakutenunifiedads"
-  data-id="Ichiba_SP_Ranking_AMP_PageBottom"
-  data-iscode="true"
-  layout="responsive"
-  data-env="stg"
+  data-id="9800"
+  data-env="dev"
 >
+  <div fallback>
+    <p>Thank you for trying AMP!</p>
+    <p>You got lucky! We have no ad to show to you!</p>
+  </div>
 </amp-ad>
-----------
-
+-----------<br />
+<amp-ad width="300"
+  height="200"
+  type="doubleclick"
+  data-slot="/4119129/doesnt-exist">
+  <div fallback>
+    <p>Thank you for trying AMP!</p>
+    <p>You got lucky! We have no ad to show to you!</p>
+  </div>
+</amp-ad>
+-----------<br />
   </body>
 </html>
