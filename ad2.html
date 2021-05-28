@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+</head>
+
+<body>
+
+<div id="rdn-adspot-Ichiba_SP_Item_Test_Display-39466104"></div>
+
+<script>
+document.cookie = "Rp=1pmf24cbf9c81c75bd3633b1a15ecf52275a6aef75094d6";
+
+	const getRpCookie = function() {
+		const cookies = document.cookie;
+		const cookieList = cookies.split(';');
+		for (let idx = 0, len = cookieList.length; idx < len; idx++) {
+			let kv = cookieList[idx].split('=');
+			if (kv[0].trim() == 'Rp') return kv[1];
+		}
+		return "";
+	};
+	const getHexFromRp = function() {
+		const rp = getRpCookie();
+		if (rp) return parseInt(rp.charAt(0), 16);
+		return undefined;
+	};
+
+	const getIndexFromRatio = function(targetNumber, ratios) {
+		const basedNumber = 16;
+		if (!ratios || ratios.length == 0) return undefined;
+		if (targetNumber >= basedNumber) return undefined;
+		const sum = ratios.reduce(function(a, x) { return a + x; });
+
+		if (sum > this._basedNumber) return undefined;
+
+		let calculated = 0;
+		for (let idx = 0, len = ratios.length; idx < len; idx++) {
+			const target = Math.round((basedNumber / sum) * ratios[idx]);
+			calculated += target;
+			if (idx + 1 == ratios.length) calculated = basedNumber;
+			if (targetNumber < calculated) return idx;
+		}
+		return undefined;
+	};
+
+	const candidateAdspotCodes = ['Ichiba_SP_Item_Test_NotDisplay', 'Ichiba_SP_Item_Test_Display'];
+	const noRPAdspotCode = 'Ichiba_SP_Item_Test_NoRp';
+
+	let dec = getHexFromRp();
+	let adspotCode = noRPAdspotCode;
+	if (dec) {
+		let idx = getIndexFromRatio(dec, [1,4]);
+		if (idx !== undefined) adspotCode = candidateAdspotCodes[idx];
+	}
+console.log(adspotCode);
+	var rdntag = rdntag || {};
+	rdntag.cmd = rdntag.cmd || [];
+	rdntag.cmd.push(function() {
+		rdntag.defineAdCode(adspotCode, 'rdn-adspot-Ichiba_SP_Item_Test_Display-39466104');
+		rdntag.display('rdn-adspot-Ichiba_SP_Item_Test_Display-39466104');
+	});
+</script>
+<script src="https://stg-s-cdn.rmp.rakuten.co.jp/js/aa.js" async></script>
+
+</body>
+</html>
