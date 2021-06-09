@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- GAM JS -->
+    <script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+    <!-- GAM JS -->
+  </head>
+  <body>
+
+テストバナー１（RUNA広告が出ない
+<div id='div-gpt-ad-1551402847892-0'></div>
+
+
+テストバナー２（RUNA広告が出る
+<div id='div-gpt-ad-20121201radnwin-015'></div>
+
+  <script>
+    var rdntag = rdntag || {};
+    rdntag.cmd = rdntag.cmd || [];
+    rdntag.cmd.push(function() {
+        rdntag
+            .defineAd("58812345", "div-gpt-ad-1551402847892-0")	// Bannerの仮adspot
+            .enableSingleRequest();
+        rdntag
+            .defineAd("589", "div-gpt-ad-20121201radnwin-015")	// Rectの仮adspot
+            .enableSingleRequest();
+
+        rdntag.displayWithSingleRequest();
+    });
+
+    // ↓　ここの処理がうまく行かない
+    var RunaBit = 0;
+
+    document.getElementById('div-gpt-ad-1551402847892-0').addEventListener('slotResponseReceived', function(e) {
+        if (e && e.detail && e.detail.adReturned === false) {
+            RunaBit += 1;
+        }
+    });
+
+    document.getElementById('div-gpt-ad-20121201radnwin-015').addEventListener('slotResponseReceived', function(e) {
+        if (e && e.detail && e.detail.adReturned === false) {
+            RunaBit += 2;
+        }
+    });
+
+    // ↑
+
+    // RUNAの広告が１つでも無い場合
+    if (RunaBit > 0) {
+
+        (function() {
+            var ua = window.navigator.userAgent;
+            if(ua){
+                if(ua.indexOf('Trident')!==-1 || ua.indexOf('MSIE')!==-1){
+                    return;
+                }
+            }
+            var purl = window.location.href;
+            var url = '//ads.pubmatic.com/AdServer/js/pwt/135165/1272';
+            var profileVersionId = '';
+            if(purl.indexOf('pwtv=')>0){
+                var regexp = /pwtv=(.*?)(&|$)/g;
+                var matches = regexp.exec(purl);
+                if(matches.length >= 2 && matches[1].length > 0){
+                    profileVersionId = '/'+matches[1];
+                }
+            }
+            var wtads = document.createElement('script');
+            wtads.async = true;
+            wtads.type = 'text/javascript';
+            wtads.src = url+profileVersionId+'/pwt.js';
+            var node = document.getElementsByTagName('script')[0];
+            node.parentNode.insertBefore(wtads, node);
+        })();
+
+        window.googletag = window.googletag || {cmd: []};
+
+        var view_width = 0;
+        var mdAdDispTarget = '0';
+        if (window.frameElement) {
+            view_width = (window.top.innerWidth || window.top.documentElement.clientWidth || window.top.getElementsByTagName('body')[0].clientWidth);
+        } else {
+            view_width = (window.innerWidth || document.documentElement.clientWidth || document.getElementsByTagName('body')[0].clientWidth)
+        }
+        if (view_width > 1366) {
+            mdAdDispTarget  = '1';
+        }
+
+        // GAMへリクエスト
+        googletag.cmd.push(function() {
+            if (RunaBit & 1) {
+                googletag.defineSlot('/7727/Infoseek/News/Banner', [[1, 1], [728, 90], [970, 250], 'fluid'], 'div-gpt-ad-1551402847892-0').addService(googletag.pubads());
+            }
+            if (RunaBit & 2) {
+                googletag.defineSlot('/7727/Infoseek/News/Rect', [300, 250], 'div-gpt-ad-20121201radnwin-015').addService(googletag.pubads());
+            }
+            if (RunaBit & 4) {
+                googletag.defineSlot('/7727/Infoseek/News/Rect4', [300, 250], 'div-gpt-ad-1450161408879-0').addService(googletag.pubads());
+            }
+            if (RunaBit & 8) {
+                googletag.defineSlot('/7727/Infoseek/News/Rect3', [300, 250], 'div-gpt-ad-1446603527284-0').addService(googletag.pubads());
+            }
+            if (RunaBit & 16) {
+                googletag.defineSlot('/7727/Infoseek/News/Rect4th', [[300, 250], [300, 600]], 'div-gpt-ad-1459991221227-0').addService(googletag.pubads());
+            }
+            if (RunaBit & 32) {
+                googletag.defineSlot('/7727/Infoseek/News/RightNativeAd2', [[1, 1], [300, 21]], 'div-gpt-ad-1551420271518-0').addService(googletag.pubads());
+            }
+            if (RunaBit & 64) {
+                googletag.defineSlot('/7727/Infoseek/News/TopText', [[1, 1], 'fluid'], 'div-gpt-ad-1551841555126-0').addService(googletag.pubads());
+            }
+            googletag.pubads().enableSingleRequest();
+            googletag.pubads().collapseEmptyDivs();
+            googletag.pubads().setTargeting("mdAdDispTarget", mdAdDispTarget);
+            googletag.pubads().setTargeting("adnwpub", "9_ISNews");
+            googletag.enableServices();
+        });
+
+        // レンダリング
+        if (RunaBit & 1) {
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1551402847892-0'); });
+        }
+        if (RunaBit & 2) {
+            googletag.cmd.push(function() { googletag.display('div-gpt-ad-20121201radnwin-015'); });
+        }
+
+    }
+
+  </script>
+
+    <!-- RUNA JS -->
+    <script src="https://stg-s-cdn.rmp.rakuten.co.jp/js/aa.js" async></script>
+    <!-- RUNA JS -->
+  </body>
+</html>
