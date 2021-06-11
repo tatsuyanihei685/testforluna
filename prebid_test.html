@@ -51,10 +51,9 @@ var params       = url.searchParams;
 var RunaBannerID = params.get('bannerid')?params.get('bannerid'):588;
 var RunaRectID   = params.get('rectid')?params.get('rectid'):589;
 
-console.log('588や589のadspotIDで広告が出るようになります。');
 console.log('テストバナー１のadspotID：' + RunaBannerID);
 console.log('テストバナー２のadspotID：' + RunaRectID);
-
+    // RUNAタグ
     var rdntag = rdntag || {};
     rdntag.cmd = rdntag.cmd || [];
     rdntag.cmd.push(function() {
@@ -89,12 +88,10 @@ console.log('テストバナー２のadspotID：' + RunaRectID);
     });
 
     const intervalId = window.setInterval(function() {	// ここで無限ループさせてる
-console.log("Bit:" + RunaBit);
-console.log("roop:" + RunaNum);
 
         if (RunaNum >= RunaAd) {	// 全ての広告情報を取得できれば無限ループを終わらせる。
             if (RunaBit > 0) {	// 1つでも広告が取得できなかった場合。
-console.log('広告の欠けあり');
+console.log('GAMの広告取得');
 
                 // render google ads
                 window.googletag = window.googletag || {cmd: []};
