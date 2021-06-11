@@ -81,7 +81,7 @@ console.log('テストバナー２のadspotID：' + RunaRectID);
 
     document.getElementById('div-gpt-ad-1446603527284-0').addEventListener('slotResponseReceived', function(e) {
         if (e && e.detail && e.detail.adReturned === false) {
-            RunaBit += 8;
+            RunaBit += 2;
         }
 
         RunaNum += 1;
@@ -113,22 +113,7 @@ console.log('GAMの広告取得');
                         googletag.defineSlot('/7727/Infoseek/News/Banner', [[1, 1], [728, 90], [970, 250], 'fluid'], 'div-gpt-ad-1551402847892-0').addService(googletag.pubads());
                     }
                     if (RunaBit & 2) {
-                        googletag.defineSlot('/7727/Infoseek/News/Rect', [300, 250], 'div-gpt-ad-20121201radnwin-015').addService(googletag.pubads());
-                    }
-                    if (RunaBit & 4) {
-                        googletag.defineSlot('/7727/Infoseek/News/Rect4', [300, 250], 'div-gpt-ad-1450161408879-0').addService(googletag.pubads());
-                    }
-                    if (RunaBit & 8) {
                         googletag.defineSlot('/7727/Infoseek/News/Rect3', [300, 250], 'div-gpt-ad-1446603527284-0').addService(googletag.pubads());
-                    }
-                    if (RunaBit & 16) {
-                        googletag.defineSlot('/7727/Infoseek/News/Rect4th', [[300, 250], [300, 600]], 'div-gpt-ad-1459991221227-0').addService(googletag.pubads());
-                    }
-                    if (RunaBit & 32) {
-                        googletag.defineSlot('/7727/Infoseek/News/RightNativeAd2', [[1, 1], [300, 21]], 'div-gpt-ad-1551420271518-0').addService(googletag.pubads());
-                    }
-                    if (RunaBit & 64) {
-                        googletag.defineSlot('/7727/Infoseek/News/TopText', [[1, 1], 'fluid'], 'div-gpt-ad-1551841555126-0').addService(googletag.pubads());
                     }
                     googletag.pubads().enableSingleRequest();
                     googletag.pubads().collapseEmptyDivs();
@@ -140,11 +125,7 @@ console.log('GAMの広告取得');
                 // レンダリング
                 if (RunaBit & 1) {
                     googletag.cmd.push(function() { googletag.display('div-gpt-ad-1551402847892-0'); });
-                }
                 if (RunaBit & 2) {
-                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-20121201radnwin-015'); });
-                }
-                if (RunaBit & 8) {
                     googletag.cmd.push(function() { googletag.display('div-gpt-ad-1446603527284-0'); });
                 }
             }
