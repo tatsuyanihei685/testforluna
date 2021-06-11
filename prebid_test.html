@@ -12,7 +12,7 @@
 <div id='div-gpt-ad-1551402847892-0'></div>
 
 テストバナー２
-<div id='div-gpt-ad-20121201radnwin-015'></div>
+<div id='div-gpt-ad-1446603527284-0'></div>
 
   <script>
 
@@ -23,6 +23,7 @@ var params       = url.searchParams;
 var RunaBannerID = params.get('bannerid')?params.get('bannerid'):588;
 var RunaRectID   = params.get('rectid')?params.get('rectid'):589;
 
+console.log('588や589のadspotIDで広告が出るようになります。');
 console.log('テストバナー１のadspotID：' + RunaBannerID);
 console.log('テストバナー２のadspotID：' + RunaRectID);
 
@@ -33,7 +34,7 @@ console.log('テストバナー２のadspotID：' + RunaRectID);
             .defineAd(RunaBannerID, "div-gpt-ad-1551402847892-0")
             .enableSingleRequest();
         rdntag
-            .defineAd(RunaRectID, "div-gpt-ad-20121201radnwin-015")
+            .defineAd(RunaRectID, "div-gpt-ad-1446603527284-0")
             .enableSingleRequest();
 
         rdntag.displayWithSingleRequest();
@@ -51,9 +52,9 @@ console.log('テストバナー２のadspotID：' + RunaRectID);
         RunaNum += 1;
     });
 
-    document.getElementById('div-gpt-ad-20121201radnwin-015').addEventListener('slotResponseReceived', function(e) {
+    document.getElementById('div-gpt-ad-1446603527284-0').addEventListener('slotResponseReceived', function(e) {
         if (e && e.detail && e.detail.adReturned === false) {
-            RunaBit += 2;
+            RunaBit += 8;
         }
 
         RunaNum += 1;
@@ -142,6 +143,9 @@ console.log('広告の欠けあり');
                 }
                 if (RunaBit & 2) {
                     googletag.cmd.push(function() { googletag.display('div-gpt-ad-20121201radnwin-015'); });
+                }
+                if (RunaBit & 8) {
+                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1446603527284-0'); });
                 }
             }
 
